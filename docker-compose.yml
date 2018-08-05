@@ -1,0 +1,27 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+version: "3.1"
+services:
+
+    memcached:
+      image: memcached:alpine
+      container_name: minerva-sylvanas-com-memcached
+
+    webserver:
+      image: nginx:alpine
+      container_name: minerva-sylvanas-com-webserver
+      working_dir: /application
+      volumes:
+          - /home/docker/development/web/minerva-sylvanas-com:/application
+          - /home/docker/development/web/minerva-sylvanas-com/phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      ports:
+       - "8080:80"
+
+    php-fpm:
+      build: phpdocker/php-fpm
+      container_name: minerva-sylvanas-com-php-fpm
+      working_dir: /application
+      volumes:
+        - /home/docker/development/web/minerva-sylvanas-com:/application
+        - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.2/fpm/conf.d/99-overrides.ini

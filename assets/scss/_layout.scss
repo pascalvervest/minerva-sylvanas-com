@@ -1,0 +1,50 @@
+body {
+  background-color: $outer-space;
+}
+
+.top-bar {
+  background-color: $outer-space;
+
+  ul {
+    background-color: $outer-space;
+      a {
+        font-family: "Fredericka the Great";
+        font-size: 1.8em;
+        color: $white;
+
+        &:hover {
+          color: $fire-bush;
+        }
+      }
+  }
+}
+
+.banner {
+  background: url('../../../../images/backgrounds/background_01.png') no-repeat center center;
+  height: 345px;
+  margin-bottom: 1em;
+  border-top: 1px solid $black;
+  border-bottom: 1px solid $black;
+}
+
+.article {
+
+  background-color: $white;
+  border: 1px solid $black;
+
+
+  h1 {
+    font-family: "Fredericka the Great";
+    font-size: 3em;
+  }
+
+  h2 {
+    font-family: "Fredericka the Great";
+    font-size: 2.25em;
+  }
+
+  p {
+    font-family: "Lora";
+    font-size: 1em;
+  }
+}

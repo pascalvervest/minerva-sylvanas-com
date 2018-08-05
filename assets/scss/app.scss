@@ -12,4 +12,6 @@ $fa-font-path: '../../webfonts' !default;
 @include foundation-everything(true);
 @include foundation-xy-grid-classes;
 
+@import 'settings';
+@import 'fonts';
 @import 'layout';

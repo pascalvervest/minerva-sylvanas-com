@@ -8,6 +8,30 @@
         "dev-server": "encore dev-server",
         "dev": "encore dev",
         "watch": "encore dev --watch",
-        "build": "encore production"
+        "build": "encore production",
+        "encore": "encore"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.2.0",
+        "browserify": "~14.0",
+        "browserify-shim": "~3.8",
+        "foundation-sites": "^6.5.0-rc.2",
+        "gulp": "^3.9.1",
+        "gulp-buffer": "0.0.2",
+        "gulp-clean-css": "~3.0",
+        "gulp-concat": "~2.6.1",
+        "gulp-css-rebase-urls": "~0.0.5",
+        "gulp-plumber": "~1.1.0",
+        "gulp-sass": "~3.1",
+        "gulp-sourcemaps": "~2.4",
+        "gulp-uglify": "~2.0.1",
+        "gulp-util": "~3.0.5",
+        "jquery": "^3.3.1",
+        "merge-stream": "^1.0.0",
+        "mustache": "~2.3.0",
+        "pretty-hrtime": "^1.0.2",
+        "vinyl-source-stream": "^1.1.0",
+        "watchify": "^3.7.0",
+        "what-input": "^5.1.1"
     }
 }

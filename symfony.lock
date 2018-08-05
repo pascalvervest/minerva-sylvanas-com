@@ -119,6 +119,9 @@
     "swiftmailer/swiftmailer": {
         "version": "v6.0.2"
     },
+    "symfony/annotations-pack": {
+        "version": "v1.0.0"
+    },
     "symfony/asset": {
         "version": "v4.1.0"
     },

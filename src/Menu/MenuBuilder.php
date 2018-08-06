@@ -37,12 +37,12 @@ class MenuBuilder
             ]
         ]);
 
-        $menu->addChild('Home', ['route' => 'app_index_index']);
-        $menu->addChild('Blogs', ['route' => 'app_index_index']);
-        $menu->addChild('Guild', ['route' => 'app_index_index']);
-        $menu->addChild('Recruits', ['route' => 'app_index_index']);
-        $menu->addChild('Progress', ['route' => 'app_index_index']);
-        $menu->addChild('Streams', ['route' => 'app_index_index']);
+        $menu->addChild('Home', ['route' => 'app_default_index']);
+        $menu->addChild('Blogs', ['route' => 'app_default_index']);
+        $menu->addChild('Guild', ['route' => 'app_default_index']);
+        $menu->addChild('Recruits', ['route' => 'app_default_index']);
+        $menu->addChild('Progress', ['route' => 'app_default_index']);
+        $menu->addChild('Streams', ['route' => 'app_default_index']);
 
         return $menu;
     }

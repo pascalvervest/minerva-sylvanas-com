@@ -8,23 +8,7 @@
         {%- endblock -%}
     </head>
     <body>
-    <div class="top-bar">
-        <div class="top-bar-left">
-            {{ knp_menu_render('main') }}
-        </div>
-    </div>
-    <div class="grid-x">
-        <div class="cell banner"></div>
-    </div>
-    {% block body %}{% endblock %}
-
-    <div class="grid-container footer">
-        <div class="grid-x grid-padding-x">
-            <div class="cell text-center">
-                copyright &copy; 2018 - <a href="https://www.minerva-sylvanas.com">www.minerva-sylvanas.com</a>
-            </div>
-        </div>
-    </div>
+    {% block content %}{% endblock %}
     {% block javascripts %}
         <script src="{{ asset('js/libs.js') }}"></script>
         <script src="{{ asset('js/app.js') }}"></script>

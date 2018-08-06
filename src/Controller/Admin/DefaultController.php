@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,10 +15,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/", name="app_default_index")
+     * @Route("/", name="app_admin_index")
      */
     public function index()
     {
-        return $this->render('index/index.html.twig', []);
+        return $this->render('admin/default/index.html.twig', []);
     }
 }

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+// Fontawesome
+$fa-font-path: '../../webfonts' !default;
+@import 'fontawesome';
+@import 'solid';
+
+// Foundation
+@import 'foundation/settings';
+@import 'foundation';
+
+@include foundation-everything(true);
+@include foundation-xy-grid-classes;
+
+@import 'admin/settings';
+@import 'admin/fonts';
+@import 'admin/layout';

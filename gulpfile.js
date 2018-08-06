@@ -17,9 +17,15 @@ let uglify = require('gulp-uglify');
 let path = require('path');
 
 // CSS resources
-let CSS = {
-    'app.css': [
-        './assets/scss/app.scss',
+let CSS_ADMIN = {
+    'admin.css' : [
+        './assets/scss/admin.scss',
+    ]
+};
+
+let CSS_FRONTEND = {
+    'frontend.css': [
+        './assets/scss/frontend.scss',
     ]
 };
 
@@ -31,8 +37,12 @@ let JS_LIBS = [
 ];
 
 // Application javascripts
-let JS_APP = [
-    './assets/js/app.js',
+let JS_ADMIN = [
+    './assets/js/admin.js',
+];
+
+let JS_FRONTEND = [
+    './assets/js/frontend.js',
 ];
 
 let FONTS = [
@@ -88,9 +98,15 @@ function bundleJs(target, files) {
         .pipe(gulp.dest('public/js'));
 }
 
-gulp.task('css', function () {
-    return merge(Object.keys(CSS).map(function (target) {
-        return bundleCss(target, CSS[target]);
+gulp.task('css_admin', function () {
+    return merge(Object.keys(CSS_ADMIN).map(function (target) {
+        return bundleCss(target, CSS_ADMIN[target]);
+    }));
+});
+
+gulp.task('css_frontend', function () {
+    return merge(Object.keys(CSS_FRONTEND).map(function (target) {
+        return bundleCss(target, CSS_FRONTEND[target]);
     }));
 });
 
@@ -99,8 +115,14 @@ gulp.task('libs', function() {
     return bundleJs('libs.js', JS_LIBS);
 });
 
-gulp.task('js', function () {
-    return merge(JS_APP.map(function (file) {
+gulp.task('js_admin', function () {
+    return merge(JS_ADMIN.map(function (file) {
+        return bundle(browserify(file, {debug: true}), file);
+    }));
+});
+
+gulp.task('js_frontend', function () {
+    return merge(JS_FRONTEND.map(function (file) {
         return bundle(browserify(file, {debug: true}), file);
     }));
 });
@@ -110,4 +132,4 @@ gulp.task('fonts', function() {
         .pipe(gulp.dest('public/webfonts'));
 });
 
-gulp.task('default', ['css', 'fonts', 'libs', 'js']);
+gulp.task('default', ['css_admin', 'css_frontend', 'fonts', 'libs', 'js_admin', 'js_frontend']);

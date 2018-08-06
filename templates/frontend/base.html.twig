@@ -1,5 +1,14 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link href="{{ asset('css/frontend.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/frontend.js') }}"></script>
+{% endblock %}
+
 {% block content %}
     <div class="top-bar">
         <div class="top-bar-left">

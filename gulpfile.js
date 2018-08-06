@@ -1,48 +1,48 @@
 'use strict';
 
-var browserify = require('browserify');
-var buffer = require('gulp-buffer');
-var cleanCss = require('gulp-clean-css');
-var concat = require('gulp-concat');
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var merge = require('merge-stream');
-var plumber = require('gulp-plumber');
-var prettify = require('pretty-hrtime');
-var rebase = require('gulp-css-rebase-urls');
-var sass = require('gulp-sass');
-var source = require('vinyl-source-stream');
-var sourcemaps = require('gulp-sourcemaps');
-var uglify = require('gulp-uglify');
-var path = require('path');
+let browserify = require('browserify');
+let buffer = require('gulp-buffer');
+let cleanCss = require('gulp-clean-css');
+let concat = require('gulp-concat');
+let gulp = require('gulp');
+let gutil = require('gulp-util');
+let merge = require('merge-stream');
+let plumber = require('gulp-plumber');
+let prettify = require('pretty-hrtime');
+let rebase = require('gulp-css-rebase-urls');
+let sass = require('gulp-sass');
+let source = require('vinyl-source-stream');
+let sourcemaps = require('gulp-sourcemaps');
+let uglify = require('gulp-uglify');
+let path = require('path');
 
 // CSS resources
-var CSS = {
+let CSS = {
     'app.css': [
         './assets/scss/app.scss',
     ]
 };
 
 // Libraries
-var JS_LIBS = [
+let JS_LIBS = [
     './node_modules/jquery/dist/jquery.min.js',
     './node_modules/what-input/dist/what-input.min.js',
     './node_modules/foundation-sites/dist/js/foundation.min.js',
 ];
 
 // Application javascripts
-var JS_APP = [
+let JS_APP = [
     './assets/js/app.js',
 ];
 
-var FONTS = [
+let FONTS = [
     './node_modules/@fortawesome/fontawesome-free/webfonts/*'
 ];
 
 // Compile modules using Browserify
 function bundle(b, file) {
     gutil.log('Bundling', gutil.colors.cyan(file));
-    var start = process.hrtime();
+    let start = process.hrtime();
 
     return b.bundle()
         .on('error', function(err) {

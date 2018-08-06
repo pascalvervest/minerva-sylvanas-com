@@ -51,7 +51,7 @@ function bundle(b, file) {
         .pipe(source(path.basename(file)))
         .pipe(buffer())
         .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
-        .pipe(uglify({mangle: false, preserveComments: 'some'}))
+        .pipe(uglify({mangle: false}))
         .pipe(sourcemaps.write('./maps')) // writes .map file
         .pipe(gulp.dest('./public/js'))
         .on('end', function() {
@@ -83,7 +83,7 @@ function bundleJs(target, files) {
         .pipe(plumber())
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(concat(target))
-        .pipe(uglify({mangle: false, preserveComments: 'some'}))
+        .pipe(uglify({mangle: false}))
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest('public/js'));
 }

@@ -32,6 +32,9 @@
         "pretty-hrtime": "^1.0.2",
         "vinyl-source-stream": "^2.0.0",
         "watchify": "^3.7.0",
-        "what-input": "^5.1.1"
+        "what-input": "^5.1.1",
+        "hoek": "^5.0.3",
+        "lodash": "^4.17.10",
+        "mime": "^2.3.1"
     }
 }
